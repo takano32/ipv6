@@ -20,25 +20,25 @@ handler = -> request, response do
 	end
 
 	response.body.gsub!(%r!(<head[^>]*>)!) do
-		$1 + <<-JS
+		$1 + <<-CSS
 
-    <style type="text/css">
-      <!--
-      .analog {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 30px;
-      }
-      -->
-    </style>
-		JS
+  <style type="text/css">
+    <!--
+    .analog {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 30px;
+    }
+    -->
+  </style>
+		CSS
 	end
 end
 
 param = {
 	:BindAddress => nil,
-	# '127.0.0.1' and '::1'
+	# bind '127.0.0.1' and '::1'
 	:Port => 8080,
 	:ProxyContentHandler => handler,
 }
