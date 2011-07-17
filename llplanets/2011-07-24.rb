@@ -38,17 +38,17 @@ handler = -> request, response do
 	end
 end
 
-s = WEBrick::HTTPProxyServer.new(
-	:BindAddress => nil, # bind '127.0.0.1' and '::1'
+proxy = WEBrick::HTTPProxyServer.new(
+	:BindAddress => nil, # bind '0.0.0.0' and '::0'
 	:Port => 8080,
 	:ProxyContentHandler => handler,
 )
 
 Signal.trap(:INT) do
-	s.shutdown
+	proxy.shutdown
 end
 
-s.start
+proxy.start
 
 __END__
 R0lGODlhlgA8AJEAAGbMAGb/AP///wAAACH5BAAAAAAALAAAAACWADwAAAL/jI+py+0Po5y0
