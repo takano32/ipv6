@@ -38,13 +38,11 @@ handler = -> request, response do
 	end
 end
 
-param = {
-	:BindAddress => nil,
-	# bind '127.0.0.1' and '::1'
+s = WEBrick::HTTPProxyServer.new(
+	:BindAddress => nil, # bind '127.0.0.1' and '::1'
 	:Port => 8080,
 	:ProxyContentHandler => handler,
-}
-s = WEBrick::HTTPProxyServer.new(param)
+)
 
 Signal.trap(:INT) do
 	s.shutdown
