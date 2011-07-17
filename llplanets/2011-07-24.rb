@@ -11,8 +11,7 @@ analog = DATA.readlines.map do |line|
 end.join
 
 handler = -> request, response do
-	p request.addr.first
-	# AF_INET or AF_INET6
+	return if request.addr.first == 'AF_INET6'
 	return unless response.content_type =~ %r!text/html!
 	return unless response.status == 200
 
