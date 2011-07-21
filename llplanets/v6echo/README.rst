@@ -10,18 +10,17 @@ IPv6の接続先サーバアドレスから文字列を構成します
 OK or NG
 ----
 
-=============== ========
-User Agent      IPv6 Ready
-=============== ========
-Opera           NG
-Chrome dev      NG
-Chrome canary   NG
-Firefox 5.0.1   OK!
-=============== ========
-wget            NG
-w3m             NG
-Lynx            OK!
-=============== ========
+================ ============
+User Agent       IPv6 Ready?
+================ ============
+Opera  11.50     NG
+Chrome dev       NG
+Chrome canary    NG
+Firefox 5.0.1    OK!
+wget             NG
+w3m              NG
+Lynx             OK!
+================ ============
 
 ::
 
