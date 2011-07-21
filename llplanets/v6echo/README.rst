@@ -21,6 +21,7 @@ OK or NG
 :Lynx: OK!
 
 ::
+
   lynx  -dump 'http://[fe80::1%en0]:7890/'
 
 TODO
@@ -29,10 +30,12 @@ TODO
 NOTE
 ----
 ::
+
   takano32% w3m -debug -6 -dump 'http://[fe80::1%en0]:7890/'
   w3m: Can't load http://[fe80::1%en0]:7890/.
 
 ::
+
   takano32% wget -O - 'http://[fe80::1%en0]:7890/'
   http://[fe80::1%en0]:7890/: IPv6 アドレスが不正です.
 
