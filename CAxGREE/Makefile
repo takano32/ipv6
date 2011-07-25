@@ -1,6 +1,6 @@
-landslid:
+landslide:
 	landslide README.rst
 
-view:
+view:	landslide
 	open presentation.html
 
