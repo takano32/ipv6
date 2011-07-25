@@ -1,3 +1,6 @@
-showoff:
-	showoff serve
+landslid:
+	landslide README.rst
+
+view:
+	open presentation.html
 
