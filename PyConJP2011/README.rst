@@ -294,6 +294,48 @@ IPv6というものは **アウト・オブ・眼中** という例
 
 ----
 
+他人ごとではない
+----------------
+
+
+.. code-block:: python
+
+  import SimpleHTTPServer
+  import SocketServer
+  
+  PORT = 8000
+  
+  Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+  
+  httpd = SocketServer.TCPServer(("", PORT), Handler)
+  
+  print "serving at port", PORT
+  httpd.serve_forever()
+
+SimpleHTTPServerを起動
+
+::
+
+  takano32% python httpd.py 
+  serving at port 8000
+
+----
+
+
+他人ごとではない
+----------------
+
+python -m SimpleHTTPServer 8000
+
+::
+
+  takano32% python -m SimpleHTTPServer 8000
+  Serving HTTP on 0.0.0.0 port 8000 ...
+
+0.0.0.0 を指定してバインドしてる・・・
+
+----
+
 FAQ
 ---
 
