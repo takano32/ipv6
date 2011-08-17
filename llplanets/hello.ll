@@ -1,4 +1,4 @@
-; hello.ll
+; ModuleID = 'hello.bc'
 
 @hello = internal constant [18 x i8] c"Hello, LL Planets\00"
 
@@ -9,4 +9,3 @@ start:
   %0 = call i32 @puts(i8* getelementptr inbounds ([18 x i8]* @hello, i32 0, i32 0))
   ret i32 0
 }
-
