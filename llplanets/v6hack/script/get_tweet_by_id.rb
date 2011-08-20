@@ -35,7 +35,8 @@ access_token = OAuth::AccessToken.new(
 
 client = OAuthRubytter.new(access_token)
 
-puts client.show(104732685049675776)
+id = ARGV.empty? ? 104732685049675776 : ARGV.join
+puts client.show(id)
 
 
 
