@@ -1342,15 +1342,18 @@ aside {
             <header><h1>IPv6アドレスったー</h1></header>
             
             
-            <section><p>動機</p>
-<p>Twitterのつぶやきには64ビットのIDが振られている情報をPHPチームから拝借</p>
+            <section><p>IPv6アドレスをキーにしたTwitterクライアント</p>
+
+<h2>動機</h2>
+<p>Twitterのつぶやきには64ビットのIDが振られている情報を <strong>PHPチームから拝借</strong></p>
 <ul class="simple">
 <li>IPv6なので、アドレスがたくさん使える<ul>
 <li>2001:2e8:406:11::/64</li>
 <li>64ビットの <strong>グローバルIPアドレス</strong></li>
 </ul>
 </li>
-</ul></section>
+</ul>
+<p>つぶやきの識別子の幅と同じ量のIPv6アドレスが使える</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1418,7 +1421,9 @@ aside {
             <header><h1>つぶやく</h1></header>
             
             
-            <section><pre><span class="s2">&quot;Hello&quot;</span><span class="o">.</span><span class="n">each_char</span> <span class="k">do</span> <span class="o">|</span><span class="n">ch</span><span class="o">|</span>
+            <section><p>IPv6アドレスの下位1バイトをASCII文字でつぶやく</p>
+<pre><span class="c1"># hello.rb</span>
+<span class="s2">&quot;Hello&quot;</span><span class="o">.</span><span class="n">each_char</span> <span class="k">do</span> <span class="o">|</span><span class="n">ch</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;0x%X&quot;</span><span class="p">,</span> <span class="n">ch</span><span class="o">.</span><span class="n">ord</span><span class="p">)</span>
 <span class="k">end</span>
 </pre>
@@ -1468,16 +1473,15 @@ $ ruby hello.rb
             <section><p>powered by &#64;ukstudio</p>
 <p>ひとつのIPアドレスに対してひとつのファイルを保存</p>
 <p>時間的都合によりPOSTまでの実装</p>
-<ul class="simple">
-<li>ファイルのPOST(既存のものは上書き)</li>
-</ul>
+
+<h2>ファイルのPOST(既存のものは上書き)</h2>
 <pre class="literal-block">
 POST http://[2001:2e8:406:11::48]:3000/storage
 POST http://[2001:2e8:406:11::49]:3000/storage
 </pre>
-<ul class="simple">
-<li>ファイルのGET</li>
-</ul>
+
+
+<h2>ファイルのGET</h2>
 <pre class="literal-block">
 GET http://[2001:2e8:406:11::48]:3000/storage
 GET http://[2001:2e8:406:11::49]:3000/storage
