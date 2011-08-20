@@ -1,7 +1,7 @@
 class V6hackController < ApplicationController
   def index
     tweet_id = addr2int(request.host)
-    render :text => Tweet.new(tweet_id).get
+    @tweet = Tweet.new(tweet_id).get
   end
 
   private
