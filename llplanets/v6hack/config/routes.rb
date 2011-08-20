@@ -30,6 +30,7 @@ Ipv6hack::Application.routes.draw do
       get 'post'
     end
   end
+  resources :storage
 
   # Sample resource route with sub-resources:
   #   resources :products do
