@@ -1,5 +1,5 @@
 class V6hackController < ApplicationController
   def index
-    render :text => request.host
+    render :text => Tweet.new(104756918937063424).get
   end
 end
