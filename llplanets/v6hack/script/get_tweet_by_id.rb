@@ -35,3 +35,7 @@ access_token = OAuth::AccessToken.new(
 
 client = OAuthRubytter.new(access_token)
 
+puts client.show(104732685049675776)
+
+
+
