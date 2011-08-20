@@ -65,6 +65,15 @@ Twitterのつぶやきには64ビットのIDが振られている情報をPHPチ
 
 http://[2001:2e8:406:11::14]:3000/v6hack
 
+- アドレスのホスト部をつぶやきのIDとしてアクセス
+
+  - ex. 0x14 => 20
+
+.. image:: jack.png
+  :align: right
+
+``Creator, Co-founder and Executive Chairman of Twitter; CEO of Square.``
+
 ----
 
 ========
