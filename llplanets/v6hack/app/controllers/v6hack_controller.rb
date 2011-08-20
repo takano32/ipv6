@@ -1,5 +1,12 @@
 class V6hackController < ApplicationController
   def index
-    render :text => Tweet.new(104756918937063424).get
+    tweet_id = addr2int(request.host)
+    render :text => Tweet.new(tweet_id).get
+  end
+
+  private
+  def addr2int(addr)
+    tweet_addr = addr.split('::').last
+    tweet_addr.split(':').join.to_i(16)
   end
 end
