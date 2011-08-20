@@ -43,9 +43,9 @@ Rubyチーム
 
 ----
 
-===============================
-IPv6アドレスTwitterクライアント
-===============================
+==================
+IPv6アドレスったー
+==================
 
 動機
 
@@ -69,10 +69,10 @@ http://[2001:2e8:406:11::14]:3000/v6hack
 
   - ex. 0x14 => 20
 
+**Creator, Co-founder and Executive Chairman of Twitter; CEO of Square.**
+
 .. image:: jack.png
   :align: right
-
-``Creator, Co-founder and Executive Chairman of Twitter; CEO of Square.``
 
 ----
 
@@ -110,19 +110,28 @@ http://twitter.com/takano32
 
 ----
 
-===============================
-IPv6アドレスをキーとするファイルストレージ
-===============================
+=======================
+アドレスをキーとするKVS
+=======================
 
-ひとつのIPアドレスに対してひとつのファイルを保存する。
-時間的都合によりPOSTまでの実装。
+powered by @ukstudio
+
+ひとつのIPアドレスに対してひとつのファイルを保存
+
+時間的都合によりPOSTまでの実装
 
 - ファイルのPOST(既存のものは上書き)
+
+::
+
   POST http://[2001:2e8:406:11::48]:3000/storage
   POST http://[2001:2e8:406:11::49]:3000/storage
 
 - ファイルのGET
+
+::
+
   GET http://[2001:2e8:406:11::48]:3000/storage
   GET http://[2001:2e8:406:11::49]:3000/storage
 
-----
+
