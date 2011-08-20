@@ -27,6 +27,8 @@ Rubyチーム
 
   - 日本UNIXユーザ会
 
+  - ia64.rb
+
 - @ukstudio
 
   - フリーランスRubyプログラマ
