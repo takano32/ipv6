@@ -7,12 +7,12 @@ require 'oauth'
 require 'rubytter'
 
 config = Pit.get("twitter",
-		  :require => {
-			  'consumer_key' => 'client CONSUMER_KEY',
-			  'consumer_secret' => 'client CONSUMER_SECRET',
-			  'access_token' => 'oauth ACCESS_TOKEN',
-			  'access_token_secret' => 'oauth ACCESS_TOKEN_SERCTET',
-	  })
+                 :require => {
+  'consumer_key' => 'client CONSUMER_KEY',
+  'consumer_secret' => 'client CONSUMER_SECRET',
+  'access_token' => 'oauth ACCESS_TOKEN',
+  'access_token_secret' => 'oauth ACCESS_TOKEN_SERCTET',
+})
 CONSUMER_KEY = config['consumer_key']
 
 CONSUMER_SECRET = config['consumer_secret']
