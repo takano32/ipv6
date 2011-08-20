@@ -3,8 +3,9 @@
 
 exit if ARGV.empty?
 
-id = ARGV.join.to_i
-host = id.to_s(16).reverse.scan(/.{1,4}/).join(':').reverse
-network = '2001:2e8:406:11'
-puts network + "::" + host
+ARGV.each do |i|
+  host = i.to_i.to_s(16).reverse.scan(/.{1,4}/).join(':').reverse
+  network = '2001:2e8:406:11'
+  puts network + "::" + host
+end
 
