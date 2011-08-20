@@ -23,12 +23,6 @@ Rubyチーム
 Rubyチーム
 ==========
 
-- @takano32
-
-  - 日本UNIXユーザ会
-
-  - ia64.rb
-
 - @ukstudio
 
   - フリーランスRubyプログラマ
@@ -40,6 +34,12 @@ Rubyチーム
   - 若手IT勉強会
 
   - Mitaka.rb
+
+- @takano32
+
+  - 日本UNIXユーザ会
+
+  - ia64.rb
 
 @ukstudio と @sugamasao のチームに当日 @takano32 がジョイン
 
