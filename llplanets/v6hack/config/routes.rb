@@ -24,6 +24,8 @@ Ipv6hack::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  #
+  resources :v6hack
 
   # Sample resource route with sub-resources:
   #   resources :products do
