@@ -4,6 +4,7 @@
 exit if ARGV.empty?
 
 id = ARGV.join.to_i
-puts id.to_s(16).reverse.scan(/.{1,4}/).join(':').reverse
-
+host = id.to_s(16).reverse.scan(/.{1,4}/).join(':').reverse
+network = '2001:2e8:406:11'
+puts network + "::" + host
 
