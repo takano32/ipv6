@@ -32,4 +32,8 @@ class Tweet
   def get
     @client.show(@tweet_id)
   end
+
+  def post
+    @client.update(@tweet_id.to_i.chr + " #llplanets #v6hack")
+  end
 end

@@ -25,7 +25,11 @@ Ipv6hack::Application.routes.draw do
   #     end
   #   end
   #
-  resources :v6hack
+  resources :v6hack do
+    collection do
+      get 'post'
+    end
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do
