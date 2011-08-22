@@ -1,5 +1,28 @@
+==========
 LL Planets
 ==========
+
+Rubyチーム
+==========
+
+WEBrick
+-------
+
+::
+
+  ./script/rails server --b="::" -p 3000
+
+
+unicorn
+-------
+
+::
+
+  unicorn_rails -l '[::]:3000'
+
+
+メモ
+====
 
 - ICMP
 
