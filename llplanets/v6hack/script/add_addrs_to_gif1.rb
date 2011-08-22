@@ -10,7 +10,7 @@ IF='gif1'
 NETWORK='2001:2e8:406:11'
 
 if __FILE__ == $0 then
-  1.upto 2**128 do |i|
+  2.upto 2**128 do |i|
     break if i == 2**64
     addr = sprintf("%X\n", i).reverse.scan(/.{1,4}/).reverse.map do |hex|
       hex.reverse
