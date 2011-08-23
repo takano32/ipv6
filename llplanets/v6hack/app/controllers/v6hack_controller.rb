@@ -11,8 +11,8 @@ class V6hackController < ApplicationController
   end
 
   def color
-		int = addr2int(request.host)
-		@tweet = Tweet.new(int).color
+    int = addr2int(request.host)
+    @tweet = Tweet.new(int).color
   end
 
   private

@@ -39,7 +39,15 @@ class Tweet
   end
 
 	def color
-		color = sprint('#%06X', @tweet_id)
+		color = sprintf('#%06X', @tweet_id)[0...6]
+
+    #cmd = %Q[curl -s -F imagedata=@- -F id=kogaidan -H "Expect:" http://gyazo.com/upload.cgi | strings]
+    #url = IO.popen(cmd, "r+") do |io|
+    #  io.puts(data)
+    #  io.close_write
+    #  io.read
+    #end
+
 		hashtags = '#llplanets #v6hack'
 		@client.update("#{color} #{hashtags}")
   end
