@@ -336,6 +336,17 @@ python -m SimpleHTTPServer 8000
 
 ----
 
+他人ごとではない
+----------------
+
+- DJango
+
+- flask
+
+- Pylamid
+
+----
+
 FAQ
 ---
 
