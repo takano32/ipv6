@@ -37,3 +37,9 @@ unicorn
 - Piet
 
   - http://www.dangermouse.net/esoteric/piet.html
+
+- v6hack color
+
+::
+
+  lynx -dump 'http://[2001:2e8:406:11::2:CBE9]:3000/v6hack/color'
