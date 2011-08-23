@@ -1,3 +1,4 @@
+# vim: set sts=2 sw=2 ts=2 ft=ruby :
 class Tweet
   require 'pit'
   require 'oauth'
@@ -35,5 +36,11 @@ class Tweet
 
   def post
     @client.update(@tweet_id.to_i.chr + " #llplanets #v6hack")
+  end
+
+	def color
+		color = sprint('#%06X', @tweet_id)
+		hashtags = '#llplanets #v6hack'
+		@client.update("#{color} #{hashtags}")
   end
 end

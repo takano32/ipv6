@@ -1,3 +1,4 @@
+# vim: set sts=2 sw=2 ts=2 ft=ruby :
 class V6hackController < ApplicationController
   def index
     tweet_id = addr2int(request.host)
@@ -7,6 +8,11 @@ class V6hackController < ApplicationController
   def post
     ch = addr2int(request.host)
     @tweet = Tweet.new(ch).post
+  end
+
+  def color
+		int = addr2int(request.host)
+		@tweet = Tweet.new(int).color
   end
 
   private

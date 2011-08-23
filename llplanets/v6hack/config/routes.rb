@@ -28,6 +28,7 @@ Ipv6hack::Application.routes.draw do
   resources :v6hack do
     collection do
       get 'post'
+      get 'color'
     end
   end
   resources :storage
