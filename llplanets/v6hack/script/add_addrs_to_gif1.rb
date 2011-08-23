@@ -11,7 +11,7 @@ NETWORK='2001:2e8:406:11'
 
 if __FILE__ == $0 then
   2.upto 2**128 do |i|
-    break if i == 2**64
+    break if i == 2**24-1
     addr = sprintf("%X\n", i).reverse.scan(/.{1,4}/).reverse.map do |hex|
       hex.reverse
     end.join(':')
