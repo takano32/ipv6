@@ -1,4 +1,4 @@
-# vim: set sts=2 sw=2 ts=2 ft=ruby :
+# vim: set et sts=2 sw=2 ts=2 ft=ruby :
 class V6hackController < ApplicationController
   def index
     tweet_id = addr2int(request.host)
