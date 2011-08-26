@@ -355,6 +355,34 @@ Django
 
 ----
 
+BaseRunserverCommand class
+--------------------------
+
+core/management/commands/runserver.py
+
+.. code-block:: python
+
+    def handle(self, addrport='', *args, **options):
+        self.use_ipv6 = options.get('use_ipv6')
+        if self.use_ipv6 and not socket.has_ipv6:
+            raise CommandError('Your Python does not support IPv6.')
+        if args:
+            raise CommandError('Usage is runserver %s' % self.args)
+        self._raw_ipv6 = False
+        if not addrport:
+            self.addr = ''
+            self.port = DEFAULT_PORT
+        else:
+            m = re.match(naiveip_re, addrport)
+            if m is None:
+                raise CommandError('"%s" is not a valid port number '
+                                   'or address:port pair.' % addrport)
+            self.addr, _ipv4, _ipv6, _fqdn, self.port = m.groups()
+
+考慮はされているけど、BaseRunserverCommandにどうやってプロパティを設定するのか難しそう
+
+----
+
 Flask
 -----
 
@@ -383,6 +411,38 @@ Flask
 
   % python hello_flask.py 
    * Running on http://127.0.0.1:5000/
+
+----
+
+Flask class
+-----------
+
+.. code-block:: python
+
+    def run(self, host='127.0.0.1', port=5000, **options):
+        """Runs the application on a local development server.  If the
+        :attr:`debug` flag is set the server will automatically reload
+        for code changes and show a debugger in case an exception happened.
+
+何も考えていなさげ
+
+.. code-block:: diff
+
+  @@ -9,5 +9,5 @@ def hello():
+          return "hello"
+   
+   if __name__ == "__main__":
+  -       app.run()
+  +       app.run('::')
+
+host引数を与えてみた
+
+::
+
+  % python hello_flask.py
+   * Running on http://[::]:5000/
+
+IPv6で使えるようになった
 
 ..
   - Pyramid
