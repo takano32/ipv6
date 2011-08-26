@@ -339,11 +339,17 @@ python -m SimpleHTTPServer 8000
 他人ごとではない
 ----------------
 
-- DJango
+- Django
 
-- flask
+  - https://www.djangoproject.com/
 
-- Pylamid
+- Flask
+
+  - http://flask.pocoo.org/
+
+- Pyramid
+
+  - https://docs.pylonsproject.org/projects/pyramid/1.1/index.html
 
 ----
 
