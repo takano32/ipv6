@@ -10,12 +10,12 @@ IF='gif1'
 NETWORK='2001:2e8:406:11'
 
 if __FILE__ == $0 then
-  0.upto 2**128 do |i|
+  (2**23).upto 2**128 do |i|
     break if i == 2**24
     addr = sprintf("%X\n", i).reverse.scan(/.{1,2}/).reverse.map do |hex|
       hex.reverse
     end.join(':')
-    puts %Q!sudo ifconfig #{IF} inet6 add #{NETWORK}::#{addr}:0/64!
+    puts %Q!sudo ifconfig #{IF} inet6 add #{NETWORK}:#{addr}:0/64!
   end
 end
 
