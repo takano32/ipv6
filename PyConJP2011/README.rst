@@ -322,7 +322,7 @@ SimpleHTTPServerを起動
 ----
 
 
-他人ごとではない
+SimpleHTTPServer
 ----------------
 
 python -m SimpleHTTPServer 8000
@@ -336,20 +336,58 @@ python -m SimpleHTTPServer 8000
 
 ----
 
-他人ごとではない
-----------------
+Django
+------
 
 - Django
 
   - https://www.djangoproject.com/
 
+::
+
+  % python manage.py runserver
+  Validating models...
+  
+  0 errors found
+  Django version 1.3, using settings 'djangosite.settings'
+  Development server is running at http://127.0.0.1:8000/
+  Quit the server with CONTROL-C.
+
+----
+
+Flask
+-----
+
 - Flask
 
   - http://flask.pocoo.org/
 
-- Pyramid
+.. code-block:: python
 
-  - https://docs.pylonsproject.org/projects/pyramid/1.1/index.html
+  #!/usr/bin/env python
+  
+  from flask import Flask
+  app = Flask(__name__)
+  
+  @app.route("/")
+  
+  def hello():
+          return "hello"
+  
+  if __name__ == "__main__":
+          app.run()
+
+実行
+
+::
+
+  % python hello_flask.py 
+   * Running on http://127.0.0.1:5000/
+
+..
+  - Pyramid
+  
+    - https://docs.pylonsproject.org/projects/pyramid/1.1/index.html
 
 ----
 
