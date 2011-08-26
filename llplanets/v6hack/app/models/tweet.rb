@@ -41,7 +41,7 @@ class Tweet
 	def color
 		color = sprintf('#%06X', @tweet_id)[0...6]
 
-    #cmd = %Q[curl -s -F imagedata=@- -F id=kogaidan -H "Expect:" http://gyazo.com/upload.cgi | strings]
+    #cmd = %Q[curl -s -F imagedata=@- -F id=v6hack -H "Expect:" http://gyazo.com/upload.cgi | strings]
     #url = IO.popen(cmd, "r+") do |io|
     #  io.puts(data)
     #  io.close_write
