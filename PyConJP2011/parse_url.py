@@ -11,5 +11,7 @@ print pp.pformat(result)
 
 result = urlparse('http://[fe80::1%en0]:7890/')
 print pp.pformat(result)
+print 'hostname: ' + result.hostname
+print 'port:     ' + str(result.port)
 
 

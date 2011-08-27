@@ -2,18 +2,15 @@
 5分でわかるIPv6
 ===================================
 
-- タイトルを中央にもってくる方法がわからない
-
-  - ってか、書いてる間にプレゼンツールがデグレったっぽい
-
-
 - 5分でわかるIPv6 @ PyCon JP 2011
 
   - 2011年8月27日
-    
+
   - 於 産業技術大学院大学
 
   - 高野光弘 /  @takano32 <tak at no32.tk>
+
+.. image:: 3D32.png
 
 ----
 
@@ -21,6 +18,7 @@
 ----------
 
 .. image:: takano32.jpg
+  :align: left
 
 @takano32 a.k.a. 高野光弘
 
@@ -30,17 +28,49 @@
 
 - 日本UNIXユーザ会
 
-  - 理事 / 幹事のなかでは最年少のはずなんだけど・・・
-
   - 同年代から「暗黒UNIXおじさん」と呼ばれる
 
-- Rubyコミッタ
+- Rubyコミッタ / IA-64メンテナ
 
-  - IA-64という世にも奇妙なアーキのメンテナ
+  - 前職ではIA-64やAMD64やIntel64を対象にした仮想計算機機構を作ってた
 
-    - IA-64やAMD64やIntel64を対象にした仮想計算機機構を作ってた
+  - IA-64でRuby 1.9.3のFiber#resumeが落ちるのはぼくのせいです
 
-    - IA-64でRuby 1.9.3のFiber#resumeが落ちるのはぼくのせいです
+----
+
+お前、誰よ
+----------
+
+sinsai.info
+^^^^^^^^^^^
+
+.. image:: sinsai.info_logo.png
+
+開発リーダー
+^^^^^^^^^^^^
+
+.. image:: sinsai.info_staff.png
+
+ 
+スポンサー
+
+.. image:: sinsai.info_footer.png
+
+
+----
+
+お前、誰よ
+----------
+
+エキスパートPython
+^^^^^^^^^^^^^^^^^^
+
+.. image:: expert_python.jpg
+  :height: 320px
+
+- @t2y に誘われて査読
+
+  - すみっこにちょろっと名前が載っています
 
 ----
 
@@ -49,10 +79,6 @@
 IPv6の暗黒面とかの話をします
 
 - ネットワーク屋の常識とソフトウェア屋の常識
-
-  - 剥離がおそろしい
-
-  - いまIPv4でできてることができなくなるよ
 
   - ソフトウェアエンジニアが「ギャー」ってなる例とか紹介します
 
@@ -78,16 +104,16 @@ ex. 127.0.0.1 / ループバックアドレス
   - 「みんなそう指定してるから指定してる」でしょ？
 
   - それ正しいんです
-  
+
 - 現在では 127.0.0.0/8 という説が有力
 
   - つまり、 127.x.y.z でよいという説が有力
 
-- ping -c 127.16.32.64
+- ping 127.16.32.64
 
   - Linux / 0% packet loss
 
-  - Darwin / 100% packet loss
+  - Darwin / **100% packet loss**
 
 日常的に使っているものもよくわからない
 
@@ -100,18 +126,27 @@ ex. リンクローカルアドレス
 
 - IPv4ではよくわかんないが勝手に 169.254.0.0/16 とか割り当てるやつの正式名称
 
-- IPv6ではIPv4のプライベートアドレスのように使ったりする
+..
+  - IPv6ではメインの通信というより、アドレスの自動設定や近隣探索に利用
+  
+     - 「プライベートアドレス」の利用が氾濫し、現状と変化しない使い方を懸念
+  
+     - 「プライベートアドレス」という概念は現在では廃止されている
 
-   - 元々の意味はブロードキャストセグメントの通信に使えるアドレス
+- とりあえずIPv6機構が有効になっていれば単一のマシンで使える
+
+  - Mac とかなら手元で ifconfig すればすぐに使える
+
+  - 今回はこのアドレスを例にアドレス表記などについておさらい
 
 ----
 
 アドレス表記 (Contd.)
 ---------------------
 
-- IPv4 プライベートアドレス
+- IPv4 リンクローカルアドレス
 
-  - 10.0.0.0/8 or 172.16.0.0/12 or 192.168.0.0/16
+  - 169.254.0.0/16
 
 - IPv6 リンクローカルアドレス
 
@@ -123,7 +158,7 @@ ex. リンクローカルアドレス
 
   - IPv6ではどう書くんでしょうか？
 
-  - 今回はリンクローカルアドレスについて考えてみよう
+    - 基本はサイトローカルアドレスと同じです
 
     - see also RFC 5156 `2.3. IPv4-Compatible Addresses`
 
@@ -138,21 +173,23 @@ ex. リンクローカルアドレス
 
   - コロン区切り表記に由来してポート番号がわからなくなるので [] が必要
 
-  - インターフェイスを指定しないと行き先がわかんない
+  - インターフェイスを指定しないと行き先がわかんない / 続きはRFC 1884で
 
-    - これも続きはRFC 1884で
+- ゾーンの扱いが難しい
 
-- ネットワーク屋の主張
+  - ゾーンというのは上記では `en0` の部分
 
-  - DNSでAAAAを引けば生のアドレス打たなくていいじゃーん
+  - **ゾーンを指定しないと行き先が分からない**
 
-  - 問題が起きないっていうデータの裏付けも取れてるよ！
+  - **コマンドによってゾーンの扱いはことなる**
 
-    - ex. World IPv6 Day
+- ブラウザだとインターフェース指定がない
 
-でも、それはユーザの視点。開発者はヤバイ。
+ - 起動するたびに **-i eth0** とか指定するブラウザがあったらキモイ
 
-192.168.32.16 使えないと困るよね。
+ - http://[fe80::01%en0]:8080/ のようなURL指定になる
+
+ - **そんな不思議なURIで大丈夫か？**
 
 ----
 
@@ -165,37 +202,15 @@ User Agent       IPv6 linklocal address Ready?
 wget             NG
 w3m              NG
 Lynx             OK!
-================ ====================================
-
-- 意外だったのは w3m vs. Lynx
-
-  - w3mのほうがユーザ数多い気がする
-    
-  - メンテナも多い気がする
-
-  - それ以上に国産！
-
-    - IPv6には日本からかなりのコミットがある
-
-  - Lynxのほうは元から仕様に忠実な実装してたのかなぁ？
-
-とりあえず、 **よくわかんないことはわかった**
-
-はい、つぎの User Agent いきましょう
-
-----
-
-User Agentのまとめ 2.0
-----------------------
-
-================ ====================================
-User Agent       IPv6 linklocal address Ready?
-================ ====================================
 Opera  11.50     NG
 Chrome dev       NG
 Chrome canary    NG
 Firefox 5.0.1    OK!
 ================ ====================================
+
+- w3m vs. lynx
+
+  - 国内からコミットの多いIPv6対応があまいw3mが意外
 
 - Firefoxがんばってる
 
@@ -222,8 +237,8 @@ Firefox 5.0.1    OK!
 
 ----
 
-ex. 言語処理系
---------------
+ex. PHP powered by Zend Engine
+------------------------------
 
 我らがPHPでURIをパースしてみた
 
@@ -250,16 +265,12 @@ ex. 言語処理系
 
 - ソース読んでないけど、これは実装が適当すぎる例ですね
 
-  - host は [] とゾーンが取り除かれないと他の用途で使うときはダメ
-
-- Rubyはちょっとだけ、ほんとにちょっとだけマシ？考えようによっては劣ってる
-
-  - URI::InvalidURIError という例外が発生する
+  - host は [] が取り除かれないと他の用途で使えません
 
 ----
 
-ex. フレームワーク
-------------------
+ex. Sinatra powered by Ruby
+---------------------------
 
 Sinatra / sinatra / lib / sinatra / base.rb
 
@@ -297,30 +308,50 @@ IPv6というものは **アウト・オブ・眼中** という例
 他人ごとではない
 ----------------
 
+突撃、隣のライブラリ・フレームワーク！
 
-.. code-block:: python
+IPv6 Readyなんでしょうか
 
-  import SimpleHTTPServer
-  import SocketServer
-  
-  PORT = 8000
-  
-  Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-  
-  httpd = SocketServer.TCPServer(("", PORT), Handler)
-  
-  print "serving at port", PORT
-  httpd.serve_forever()
+- urlparse
 
-SimpleHTTPServerを起動
+- SimpleHTTPServer
 
-::
+- Django
 
-  takano32% python httpd.py 
-  serving at port 8000
+- Flask
 
 ----
 
+urlparse
+--------
+
+.. code-block:: python
+
+  #!/usr/bin/env python
+  import pprint
+  pp = pprint.PrettyPrinter(indent = 4)
+  
+  from urlparse import urlparse
+  
+  result = urlparse('http://[fe80::1%en0]:7890/')
+  print pp.pformat(result)
+  print 'hostname: ' + result.hostname
+  print 'port:     ' + str(result.port)
+
+出力結果は以下の通り
+
+::
+
+  ParseResult(scheme='http', netloc='[fe80::1%en0]:7890',
+    path='/', params='', query='', fragment='')
+  hostname: fe80::1%en0
+  port:     7890
+  
+予想外にもhostnameとportがパースできている！
+
+これは好感触
+
+----
 
 SimpleHTTPServer
 ----------------
@@ -333,6 +364,8 @@ python -m SimpleHTTPServer 8000
   Serving HTTP on 0.0.0.0 port 8000 ...
 
 0.0.0.0 を指定してバインドしてる・・・
+
+ソースコードを読んでみましたがガッツリ **0.0.0.0** って書いてありました
 
 ----
 
@@ -353,10 +386,17 @@ Django
   Development server is running at http://127.0.0.1:8000/
   Quit the server with CONTROL-C.
 
+- 127.0.0.1ェ・・・
+
+  - しょうがないのでソースコードを読んでみる
+
 ----
 
+Django
+------
+
 BaseRunserverCommand class
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 core/management/commands/runserver.py
 
@@ -379,7 +419,33 @@ core/management/commands/runserver.py
                                    'or address:port pair.' % addrport)
             self.addr, _ipv4, _ipv6, _fqdn, self.port = m.groups()
 
-考慮はされているけど、BaseRunserverCommandにどうやってプロパティを設定するのか難しそう
+- 考慮はされている
+  
+  - BaseRunserverCommandにどうやってプロパティを設定するのか
+
+----
+
+Django
+------
+
+BaseRunserverCommand class
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BaseRunserverCommandにどうやってプロパティを設定するのか
+
+カンでやったらできた
+
+::
+
+  python2.7 manage.py runserver '[::]:8080'
+  Validating models...
+  
+  0 errors found
+  Django version 1.3, using settings 'djangosite.settings'
+  Development server is running at http://[::]:8080/
+  Quit the server with CONTROL-C.
+
+**IPv6で使えるようになった**
 
 ----
 
@@ -412,6 +478,10 @@ Flask
   % python hello_flask.py 
    * Running on http://127.0.0.1:5000/
 
+- 127.0.0.1ェ・・・
+
+  - しょうがないのでソースコードを読んでみる
+
 ----
 
 Flask class
@@ -442,7 +512,7 @@ host引数を与えてみた
   % python hello_flask.py
    * Running on http://[::]:5000/
 
-IPv6で使えるようになった
+**IPv6で使えるようになった**
 
 ..
   - Pyramid
@@ -451,42 +521,18 @@ IPv6で使えるようになった
 
 ----
 
-FAQ
----
-
-なんであなたはチケット切ったり修正しないんですか
-
-- @takano32 はクラウドシステムのようにスケールしません...orz
-
-- 影響プロダクトが無数
-
-  - FTPとかもNAPTでブッ壊れるんじゃないかなー
-
-    - っていうか、たぶんip_conntrack_ftpとip_nat_ftpで壊れる
-      
-    - FTPとかソフトウェア屋にとってはロステク
-        
-    - でも各所のWebデザインが「ギャー」するのかなー
-
-  - **#IPv6あるある** くらいには「ギャー」ってなると思う
-
-
-- できるのは啓蒙活動くらい
-
-- Rubyまわりくらいは余裕があればなおします
-
-  - CRubyは処理系周りのコミット権あるし、折衝しやすい
-
-----
-
 まとめ
 ------
+
+もっと生産的な意見を提示しようと思っていたんだけれど、Python界は思ったより平和でした
+
+油断しているとIPv6は **オウト・オブ・眼中**
 
 - **どのレイヤーで問題が起こるかわからない** ので、必要なときには専門外のソースコードにもダイブする勇気を
 
 - 同じ問題意識を共有し、世界のサービスが「ギャー」ってならないといいですね！
 
-  - そして、余裕があれば啓蒙活動をしましょう
+  - 余裕があれば啓蒙活動をしましょう
 
 - 今回の例は氷山の一角でIPv6が広く使われはじめたら何が起こるか分かりません
 
@@ -494,51 +540,23 @@ FAQ
 
   - さしあたり LSN or CGN でインターネットの「ギャー」ありそう
 
-    - 超大雑把に言うとバカでかいNAPT作りましたってヤツです
-      
     - Ajax使ってるサービスはNAPTのテーブル溢れさせる可能性高い
 
 ----
 
-おしまい
---------
-
-- ご清聴ありがとうございました
-
-- 宣伝
-
-  - LL Planets の IPv6ハッカソン で登壇します
-
-    - http://ll.jus.or.jp/2011/program/ipv6hackathon.html
-        
-      - 絶賛登壇者募集中
-
-        - LL Planets実行委員もやってる
-
-        - ぼくと契約して(ry
-
-    - チケット買っていただけると実行委員一同歓喜
-
-      - 最速ほげふが研究会のマラもくるのでたぶん楽しい
-
-  - PyCon JP 2011 でも登壇します <= NEW
-
+宣伝
 ----
 
-おまけ：あなたの IPv6 レベル
-----------------------------
+キネクトハッカーズマニュアル
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+.. image:: kinect_cover.png
+  :height: 320px
 
-独断と偏見
+- 発売日 / 8月25日
 
-#. "IPv6"という文字列
-#. IPv4 と IPv6 の存在
-#. IPv4 のIPアドレスが少ない
-#. IPv4 のグローバルアドレスが枯渇した
-#. IPv4 のアドレスは32ビットで IPv6 のアドレスは 128ビット
-#. IPv6 のアドレス表記
-#. AAAA レコードの存在
-#. アドレス空間の分け方
-#. IPv4ヘッダとIPv6ヘッダの違い
-#. アドレス空間が腐っても平気な回数
+- 定価 / 2480円+税
 
-
+- @hagino3000 に誘われて査読
+  
+  - すみにちょろっと名前が(ry

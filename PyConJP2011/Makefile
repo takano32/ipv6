@@ -1,5 +1,5 @@
 landslide:
-	landslide README.rst
+	landslide -i README.rst
 
 view:	landslide
 	open presentation.html
