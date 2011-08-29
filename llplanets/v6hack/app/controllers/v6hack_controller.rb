@@ -17,7 +17,7 @@ class V6hackController < ApplicationController
 
   private
   def addr2int(addr)
-    tweet_addr = addr.split('::').last
+    tweet_addr = addr.split(%r!2001:2e8:406:11::?!).last.chop
     tweet_addr.split(':').join.to_i(16)
   end
 end

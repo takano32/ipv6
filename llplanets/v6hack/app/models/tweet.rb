@@ -3,6 +3,7 @@ class Tweet
   require 'pit'
   require 'oauth'
   require 'rubytter'
+  require 'RMagick'
 
   CONSUMER_KEY = 'sp0gUKPEBP7n8WULrrAS0w'
   CONSUMER_SECRET = 'h7UU66idNRfprnYacdOktyBlmaZijy0MXbwtDHqRM'
@@ -39,16 +40,19 @@ class Tweet
   end
 
 	def color
-		color = sprintf('#%06X', @tweet_id)[0...6]
-
-    #cmd = %Q[curl -s -F imagedata=@- -F id=v6hack -H "Expect:" http://gyazo.com/upload.cgi | strings]
-    #url = IO.popen(cmd, "r+") do |io|
-    #  io.puts(data)
-    #  io.close_write
-    #  io.read
-    #end
+		color = sprintf('#%07X', @tweet_id)[0...7]
+		img = Magick::Image.new(640, 480) do
+			self.background_color = color
+			self.format = 'png'
+		end
+    cmd = %Q[curl -s -F imagedata=@- -F id=v6hack -H "Expect:" http://gyazo.com/upload.cgi | strings]
+    url = IO.popen(cmd, "r+") do |io|
+      io.puts(img.to_blob)
+      io.close_write
+      io.read
+    end
 
 		hashtags = '#llplanets #v6hack'
-		@client.update("#{color} #{hashtags}")
+		@client.update("#{color} #{url} #{hashtags}")
   end
 end
