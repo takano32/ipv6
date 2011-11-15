@@ -14,8 +14,8 @@
 
 ----
 
-お前、誰よ
-----------
+自己紹介
+--------
 
 .. image:: takano32.jpg
   :align: left
@@ -32,9 +32,7 @@
 
 - Rubyコミッタ / IA-64メンテナ
 
-  - 前職ではIA-64やAMD64やIntel64を対象にした仮想計算機機構を作ってた
-
-  - IA-64でRuby 1.9.3のFiber#resumeが落ちるのはぼくのせいです
+  - 前職ではIA-64やAMD64やIntel64を対象にした仮想計算機機構の開発
 
 ----
 
@@ -56,23 +54,6 @@ sinsai.info
 協賛
 
 .. image:: sinsai.info_footer.png
-
-
-----
-
-
-お前、誰よ
-----------
-
-エキスパートPython
-^^^^^^^^^^^^^^^^^^
-
-.. image:: expert_python.jpg
-  :height: 320px
-
-- @t2y に誘われて査読
-
-  - すみっこにちょろっと名前が載っています
 
 ----
 
