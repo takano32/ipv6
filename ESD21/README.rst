@@ -1,6 +1,6 @@
-===================================================
- IPv6の影響範囲とIPv6で感じるジェネラリストの必要性
-===================================================
+=====
+ESD21
+=====
 
 -  IPv6の影響範囲とIPv6で感じるジェネラリストの必要性
 
@@ -57,6 +57,35 @@ sinsai.info
 
 ----
 
+開発経験のあるプロダクトなど
+----------------------------
+
+- Smalltalk言語処理系
+
+  - BREWプラットフォーム向け .NET VM の開発
+
+- ギャザリング電子商取引サイト
+
+  - 雑多なページのほか、クレジットカードの与信など
+
+- 弁理士向けポータルサイトの開発
+
+  - 検索機構や他サイトからのニュース引用の機能
+
+- 企業向けメッセンジャー
+
+  - SIPによる呼応制御やサーバサイドの実装
+
+  - クライアントのビデオチャット機能なども担当
+
+- ブレードサーバ向け仮想化機構の開発
+
+- 大規模インフラストラクチャのメンテナンス
+
+わりといろいろやってる (；´Д｀)
+
+----
+
 今日のアジェンダ
 ----------------
 IPv6の暗黒面とかの話をします
@@ -77,12 +106,35 @@ IPv6の暗黒面とかの話をします
 
 ----
 
+現状の説明
+----------
+
+#. インターネットの仕組みを考えたひとたちは賢い
+
+   - 割と予想していなかった規模まで耐えちゃってる
+
+#. TCP/IP, UDP/IP がおまけとしてついてくる状況になり爆発的にインターネットが普及
+
+   - Windows 95 の発売などが大きい
+
+   - その以前まではパソコン通信などが主流のコミュニケーション手段
+
+#. インターネットの仕組みを考えていた時代には考えられない問題が多発
+
+   - 最たるものがIPv4アドレスの枯渇
+
+次期にIPv6というものに置き換わることが予想されている
+
+IPv6を推進する団体ではすでに普及した後に発生する問題を予想したりなどしている
+
+----
+
 復習: インターネットの恐ろしさ
 ------------------------------
 
 IPv6の前にIPv4もコワイですよ
 
-ex. 127.0.0.1 / ループバックアドレス
+ex. 127.0.0.1 / ループバックアドレス ← 「オレの家」みたいな意味
 
 - 自身のIPアドレスであるらしい
 
@@ -184,16 +236,13 @@ ex. リンクローカルアドレス
 
 - IPv4ではよくわかんないが勝手に 169.254.0.0/16 とか割り当てるやつの正式名称
 
-..
-  - IPv6ではメインの通信というより、アドレスの自動設定や近隣探索に利用
-  
-     - 「プライベートアドレス」の利用が氾濫し、現状と変化しない使い方を懸念
-  
-     - 「プライベートアドレス」という概念は現在では廃止されている
+  - 職場でとなりのコンピュータが何もしてないのに見えたりするのはこのおかげ
 
-とはいえ、技術者は使わないといけないことになりそう
-
-.. ToDo
+- IPv6ではメインの通信というより、アドレスの自動設定や近隣探索に利用
+  
+   - 「プライベートアドレス」の利用が氾濫し、現状と変化しない使い方を懸念
+  
+   - 「プライベートアドレス」という概念は現在では廃止されている
 
 - とりあえずIPv6機構が有効になっていれば単一のマシンで使える
 
@@ -203,8 +252,126 @@ ex. リンクローカルアドレス
 
 ----
 
+コラム：ネットワーク屋の主張
+----------------------------
+
+リンクローカルアドレスは必要ない？
+
+- DNSでAAAAを引けば生のアドレス打たなくていいじゃーん
+
+  - DNSというシステムを使うと人間が読みやすい文字列が機械が扱いやすいアドレスになる
+
+- 問題が起きないっていうデータの裏付けも取れてるよ！
+
+  - ex. World IPv6 Day
+
+  - 世界的に著名なサイトがIPv6でも閲覧できることを実証
+
+でも、それはユーザの視点。開発者はヤバイ。
+
+192.168.32.16 みたいなアドレス使えないと困るよね。
+
+使えない裏付けも紹介します。
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+開発環境と同程度のレベルが想定される家庭内LANでの実情
+
+.. image:: JANOG26.png
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-nakagawa-0.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-nakagawa-2.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-nakagawa-3.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-nakagawa-13.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-nakagawa-14.jpg
+
+----
+
+ほとんど何も決まってない！！！
+------------------------------
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-kitaguchi-0.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-kitaguchi-1.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-kitaguchi-2.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-kitaguchi-3.jpg
+
+----
+
+技術者が使わなければならない理由
+--------------------------------
+
+.. image:: post-v6homegw-kitaguchi-10.jpg
+
+----
+
+やっぱり何も決まってない！！！
+------------------------------
+
+----
+
+World IPv6 Day は特別な状況下で成功しただけ！！！
+-------------------------------------------------
+
+----
+
 アドレス表記 (Contd.)
 ---------------------
+
+アドレス表記のおさらい
 
 - IPv4 リンクローカルアドレス
 
@@ -255,20 +422,6 @@ ex. リンクローカルアドレス
 
 ----
 
-ネットワーク屋の主張
---------------------
-
-- DNSでAAAAを引けば生のアドレス打たなくていいじゃーん
-
-- 問題が起きないっていうデータの裏付けも取れてるよ！
-
-  - ex. World IPv6 Day
-
-でも、それはユーザの視点。開発者はヤバイ。
-
-192.168.32.16 使えないと困るよね。
-
-----
 
 実際にやってみた
 ----------------
@@ -440,26 +593,25 @@ FAQ
 
 なんであなたはチケット切ったり修正しないんですか
 
-- @takano32 はクラウドシステムのようにスケールしません...orz
+- 私はクラウドシステムのようにスケールしません...orz
+
+  - 可能な範囲では修正などを促したりしています
 
 - 影響プロダクトが無数
 
-  - FTPとかもNAPTでブッ壊れるんじゃないかなー
+  - FTPとかもNAPTで影響がありそう
 
-    - っていうか、たぶんip_conntrack_ftpとip_nat_ftpで壊れる
+    - おそらく ip_conntrack_ftp と ip_nat_ftp という箇所などで不整合
       
-    - FTPとかソフトウェア屋にとってはロステク
+    - FTPとかソフトウェア屋にとってはロストテクノロジー
         
     - でも各所のWebデザインが「ギャー」するのかなー
 
-  - **#IPv6あるある** くらいには「ギャー」ってなると思う
-
-
-- できるのは啓蒙活動くらい
-
 - Rubyまわりくらいは余裕があればなおします
 
-  - CRubyは処理系周りのコミット権あるし、折衝しやすい
+  - Rubyは処理系周りのコミット権あるし、折衝しやすい
+
+現実的に現段階で効果的なのは啓蒙活動くらい
 
 ----
 
@@ -480,245 +632,6 @@ FAQ
 
     - 超大雑把に言うとバカでかいNAPT作りましたってヤツです
       
-    - Ajax使ってるサービスはNAPTのテーブル溢れさせる可能性高い
-
-----
-
-他人ごとではない
-----------------
-
-突撃、隣のライブラリ・フレームワーク！
-
-IPv6 Readyなんでしょうか
-
-- urlparse
-
-- SimpleHTTPServer
-
-- Django
-
-- Flask
-
-----
-
-urlparse
---------
-
-.. code-block:: python
-
-  #!/usr/bin/env python
-  import pprint
-  pp = pprint.PrettyPrinter(indent = 4)
-  
-  from urlparse import urlparse
-  
-  result = urlparse('http://[fe80::1%en0]:7890/')
-  print pp.pformat(result)
-  print 'hostname: ' + result.hostname
-  print 'port:     ' + str(result.port)
-
-出力結果は以下の通り
-
-::
-
-  ParseResult(scheme='http', netloc='[fe80::1%en0]:7890',
-    path='/', params='', query='', fragment='')
-  hostname: fe80::1%en0
-  port:     7890
-  
-予想外にもhostnameとportがパースできている！
-
-これは好感触
-
-----
-
-SimpleHTTPServer
-----------------
-
-python -m SimpleHTTPServer 8000
-
-::
-
-  takano32% python -m SimpleHTTPServer 8000
-  Serving HTTP on 0.0.0.0 port 8000 ...
-
-0.0.0.0 を指定してバインドしてる・・・
-
-ソースコードを読んでみましたがガッツリ **0.0.0.0** って書いてありました
-
-----
-
-Django
-------
-
-- Django
-
-  - https://www.djangoproject.com/
-
-::
-
-  % python manage.py runserver
-  Validating models...
-  
-  0 errors found
-  Django version 1.3, using settings 'djangosite.settings'
-  Development server is running at http://127.0.0.1:8000/
-  Quit the server with CONTROL-C.
-
-- 127.0.0.1ェ・・・
-
-  - しょうがないのでソースコードを読んでみる
-
-----
-
-Django
-------
-
-BaseRunserverCommand class
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-core/management/commands/runserver.py
-
-.. code-block:: python
-
-    def handle(self, addrport='', *args, **options):
-        self.use_ipv6 = options.get('use_ipv6')
-        if self.use_ipv6 and not socket.has_ipv6:
-            raise CommandError('Your Python does not support IPv6.')
-        if args:
-            raise CommandError('Usage is runserver %s' % self.args)
-        self._raw_ipv6 = False
-        if not addrport:
-            self.addr = ''
-            self.port = DEFAULT_PORT
-        else:
-            m = re.match(naiveip_re, addrport)
-            if m is None:
-                raise CommandError('"%s" is not a valid port number '
-                                   'or address:port pair.' % addrport)
-            self.addr, _ipv4, _ipv6, _fqdn, self.port = m.groups()
-
-- 考慮はされている
-  
-  - BaseRunserverCommandにどうやってプロパティを設定するのか
-
-----
-
-Django
-------
-
-BaseRunserverCommand class
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-BaseRunserverCommandにどうやってプロパティを設定するのか
-
-カンでやったらできた
-
-::
-
-  python2.7 manage.py runserver '[::]:8080'
-  Validating models...
-  
-  0 errors found
-  Django version 1.3, using settings 'djangosite.settings'
-  Development server is running at http://[::]:8080/
-  Quit the server with CONTROL-C.
-
-**IPv6で使えるようになった**
-
-----
-
-Flask
------
-
-- Flask
-
-  - http://flask.pocoo.org/
-
-.. code-block:: python
-
-  #!/usr/bin/env python
-  
-  from flask import Flask
-  app = Flask(__name__)
-  
-  @app.route("/")
-  
-  def hello():
-          return "hello"
-  
-  if __name__ == "__main__":
-          app.run()
-
-実行
-
-::
-
-  % python hello_flask.py 
-   * Running on http://127.0.0.1:5000/
-
-- 127.0.0.1ェ・・・
-
-  - しょうがないのでソースコードを読んでみる
-
-----
-
-Flask class
------------
-
-.. code-block:: python
-
-    def run(self, host='127.0.0.1', port=5000, **options):
-        """Runs the application on a local development server.  If the
-        :attr:`debug` flag is set the server will automatically reload
-        for code changes and show a debugger in case an exception happened.
-
-何も考えていなさげ
-
-.. code-block:: diff
-
-  @@ -9,5 +9,5 @@ def hello():
-          return "hello"
-   
-   if __name__ == "__main__":
-  -       app.run()
-  +       app.run('::')
-
-host引数を与えてみた
-
-::
-
-  % python hello_flask.py
-   * Running on http://[::]:5000/
-
-**IPv6で使えるようになった**
-
-..
-  - Pyramid
-  
-    - https://docs.pylonsproject.org/projects/pyramid/1.1/index.html
-
-----
-
-まとめ
-------
-
-もっと生産的な意見を提示しようと思っていたんだけれど、Python界は思ったより平和でした
-
-ただし、油断しているとIPv6は **オウト・オブ・眼中**
-
-- **どのレイヤーで問題が起こるかわからない** ので、必要なときには専門外のソースコードにもダイブする勇気を
-
-- 同じ問題意識を共有し、世界のサービスが「ギャー」ってならないといいですね！
-
-  - 余裕があれば啓蒙活動をしましょう
-
-- 今回の例は氷山の一角でIPv6が広く使われはじめたら何が起こるか分かりません
-
-  - ネットワーク屋が言う「動く」を真に受けすぎるとやられる可能性大
-
-  - さしあたり LSN or CGN でインターネットの「ギャー」ありそう
-
     - Ajax使ってるサービスはNAPTのテーブル溢れさせる可能性高い
 
 ----
