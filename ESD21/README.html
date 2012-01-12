@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title>ESD21</title>
+<style type="text/css">
+hr { page-break-after: always; display: none;}
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="esd21">
+<h1 class="title">ESD21</h1>
+
+<ul class="simple">
+<li>IPv6の影響範囲とIPv6で感じるジェネラリストの必要性</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>2011年12月17日</li>
+<li>於 持続可能なモノづくり・人づくり支援協会</li>
+<li>高野光弘 /  &#64;takano32 &lt;tak@no32 dot tk&gt;</li>
+</ul>
+</blockquote>
+<img alt="3D32.png" src="3D32.png" />
+<hr class="docutils" />
+<div class="section" id="id1">
+<h1>自己紹介</h1>
+<img alt="takano32.jpg" class="align-left" src="takano32.jpg" />
+<p>&#64;takano32 a.k.a. 高野光弘</p>
+<ul class="simple">
+<li>グリー株式会社 開発本部 インフラ統括部<ul>
+<li>サーバ群を指揮するようなツールとか作ってます</li>
+</ul>
+</li>
+<li>日本UNIXユーザ会<ul>
+<li>同年代から「暗黒UNIXおじさん」と呼ばれる</li>
+</ul>
+</li>
+<li>Rubyコミッタ / IA-64メンテナ<ul>
+<li>前職ではIA-64やAMD64やIntel64を対象にした仮想計算機機構の開発</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h1>お前、誰よ</h1>
+<div class="section" id="sinsai-info">
+<h2>sinsai.info</h2>
+<img alt="sinsai.info_logo.png" src="sinsai.info_logo.png" />
+</div>
+<div class="section" id="id3">
+<h2>開発リーダー</h2>
+<img alt="sinsai.info_staff.png" src="sinsai.info_staff.png" />
+<p>協賛</p>
+<img alt="sinsai.info_footer.png" src="sinsai.info_footer.png" />
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h1>開発経験のあるプロダクトなど</h1>
+<ul class="simple">
+<li>Smalltalk言語処理系<ul>
+<li>BREWプラットフォーム向け .NET VM の開発</li>
+</ul>
+</li>
+<li>ギャザリング電子商取引サイト<ul>
+<li>雑多なページのほか、クレジットカードの与信など</li>
+</ul>
+</li>
+<li>弁理士向けポータルサイトの開発<ul>
+<li>検索機構や他サイトからのニュース引用の機能</li>
+</ul>
+</li>
+<li>企業向けメッセンジャー<ul>
+<li>SIPによる呼応制御やサーバサイドの実装</li>
+<li>クライアントのビデオチャット機能なども担当</li>
+</ul>
+</li>
+<li>ブレードサーバ向け仮想化機構の開発</li>
+<li>大規模インフラストラクチャのメンテナンス</li>
+</ul>
+<p>わりといろいろやってる (；´Д｀)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id5">
+<h1>今日のアジェンダ</h1>
+<p>IPv6の暗黒面とかの話をします</p>
+<ul class="simple">
+<li>ネットワーク屋の常識とソフトウェア屋の常識<ul>
+<li>剥離がおそろしい</li>
+<li>いまIPv4でできてることができなくなるよ</li>
+<li>ソフトウェアエンジニアが「ギャー」ってなる例とか紹介します</li>
+</ul>
+</li>
+<li>IPv6の仕様については最低限しか触れません<ul>
+<li>対象者は「IPv4のグローバルアドレスなくなることは知っている」くらいから</li>
+</ul>
+</li>
+</ul>
+<p>ヤバイよ、という概要説明するカンジ</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id6">
+<h1>現状の説明</h1>
+<ol class="arabic simple">
+<li>インターネットの仕組みを考えたひとたちは賢い<ul>
+<li>割と予想していなかった規模まで耐えちゃってる</li>
+</ul>
+</li>
+<li>TCP/IP, UDP/IP がおまけとしてついてくる状況になり爆発的にインターネットが普及<ul>
+<li>Windows 95 の発売などが大きい</li>
+<li>その以前まではパソコン通信などが主流のコミュニケーション手段</li>
+</ul>
+</li>
+<li>インターネットの仕組みを考えていた時代には考えられない問題が多発<ul>
+<li>最たるものがIPv4アドレスの枯渇</li>
+</ul>
+</li>
+</ol>
+<p>次期にIPv6というものに置き換わることが予想されている</p>
+<p>IPv6を推進する団体ではすでに普及した後に発生する問題を予想したりなどしている</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id7">
+<h1>復習: インターネットの恐ろしさ</h1>
+<p>IPv6の前にIPv4もコワイですよ</p>
+<p>ex. 127.0.0.1 / ループバックアドレス ← 「オレの家」みたいな意味</p>
+<ul class="simple">
+<li>自身のIPアドレスであるらしい<ul>
+<li>「みんなそう指定してるから指定してる」でしょ？</li>
+</ul>
+</li>
+<li>それ正しいんです<ul>
+<li>由来は慣習的</li>
+<li>ループバックさせている実現方法はさまざま</li>
+</ul>
+</li>
+<li>現在では 127.0.0.0/8 という説が有力<ul>
+<li>つまり、 127.x.y.z でよいという説が有力</li>
+</ul>
+</li>
+</ul>
+<p>ウンチクはそこらへんにしておいて、どうなってるんだろうね</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="linux-2-6-27-39-ia64-gnu-linux">
+<h1>Linux 2.6.27.39 ia64 GNU/Linux</h1>
+<p>適当なカーネルとプロトコルスタック選んだけどたぶんどれも同じなのでは</p>
+<pre class="literal-block">
+takano32% uname -srmo
+Linux 2.6.27.39 ia64 GNU/Linux
+takano32% ping -c 3 127.16.32.64
+PING 127.16.32.64 (127.16.32.64) 56(84) bytes of data.
+64 bytes from 127.16.32.64: icmp_req=1 ttl=64 time=0.038 ms
+64 bytes from 127.16.32.64: icmp_req=2 ttl=64 time=0.009 ms
+64 bytes from 127.16.32.64: icmp_req=3 ttl=64 time=0.008 ms
+
+--- 127.16.32.64 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2013ms
+rtt min/avg/max/mdev = 0.008/0.018/0.038/0.014 ms
+</pre>
+<ul class="simple">
+<li>有力な説の 127.0.0.0/8 を採用</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="darwin-11-0-0-x86-64-darwin">
+<h1>Darwin 11.0.0 x86_64 Darwin</h1>
+<p>Mac OS Xのカーネルとプロトコルスタックですね</p>
+<p>自己満足のために Lion 使いました</p>
+<pre class="literal-block">
+takano32% uname -srmo
+Darwin 11.0.0 x86_64 Darwin
+takano32% ping -c 3 127.16.32.64
+PING 127.16.32.64 (127.16.32.64): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+
+--- 127.16.32.64 ping statistics ---
+3 packets transmitted, 0 packets received, 100.0% packet loss
+</pre>
+<ul class="simple">
+<li><strong>100.0% packet loss</strong> ...<ul>
+<li>おそらく実装は美しい</li>
+<li>余計なことをせずに /etc/hosts に書いてあるので分かりやすい</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id8">
+<h1>まとめ: インターネットの恐ろしさ</h1>
+<ul class="simple">
+<li>インターネットはカオス<ul>
+<li>よくわかんないのになんか動いてる部分たくさん</li>
+<li>日常的に使ってるものさえもよくわからない</li>
+</ul>
+</li>
+<li><strong>さらによくわかんないIPv6</strong> というものがやってくる<ul>
+<li>IPv6 では ::1 がループバックアドレスと明示されてるけどね</li>
+<li>書き忘れたけど、IPv4の不便なところたくさん解消されてる<ul>
+<li>アドレスの枯渇の解消とかはその一部</li>
+<li>フラグメント化のムダの排除とかARP spoofingの対策とかも入ってる</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>でも、こっから先はIPv6の暗黒面</p>
+<p><strong>IPv6右翼の方は可及的速やかに聞かないフリをしてください</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id9">
+<h1>アドレス表記</h1>
+<p>ex. リンクローカルアドレス</p>
+<ul>
+<li><p class="first">IPv4ではよくわかんないが勝手に 169.254.0.0/16 とか割り当てるやつの正式名称</p>
+<ul class="simple">
+<li>職場でとなりのコンピュータが何もしてないのに見えたりするのはこのおかげ</li>
+</ul>
+</li>
+<li><p class="first">IPv6ではメインの通信というより、アドレスの自動設定や近隣探索に利用</p>
+<blockquote>
+<ul class="simple">
+<li>「プライベートアドレス」の利用が氾濫し、現状と変化しない使い方を懸念</li>
+<li>「プライベートアドレス」という概念は現在では廃止されている</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">とりあえずIPv6機構が有効になっていれば単一のマシンで使える</p>
+<ul class="simple">
+<li>Mac とかなら手元で ifconfig すればすぐに使える</li>
+<li>今回はこのアドレスを例にアドレス表記などについておさらい</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id10">
+<h1>コラム：ネットワーク屋の主張</h1>
+<p>リンクローカルアドレスは必要ない？</p>
+<ul class="simple">
+<li>DNSでAAAAを引けば生のアドレス打たなくていいじゃーん<ul>
+<li>DNSというシステムを使うと人間が読みやすい文字列が機械が扱いやすいアドレスになる</li>
+</ul>
+</li>
+<li>問題が起きないっていうデータの裏付けも取れてるよ！<ul>
+<li>ex. World IPv6 Day</li>
+<li>世界的に著名なサイトがIPv6でも閲覧できることを実証</li>
+</ul>
+</li>
+</ul>
+<p>でも、それはユーザの視点。開発者はヤバイ。</p>
+<p>192.168.32.16 みたいなアドレス使えないと困るよね。</p>
+<p>使えない裏付けも紹介します。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id11">
+<h1>技術者が使わなければならない理由</h1>
+<p>開発環境と同程度のレベルが想定される家庭内LANでの実情</p>
+<img alt="JANOG26.png" src="JANOG26.png" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id18">
+<h1>技術者が使わなければならない理由</h1>
+<img alt="post-v6homegw-kitaguchi-0.jpg" src="post-v6homegw-kitaguchi-0.jpg" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id19">
+<h1>技術者が使わなければならない理由</h1>
+<img alt="post-v6homegw-kitaguchi-1.jpg" src="post-v6homegw-kitaguchi-1.jpg" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id20">
+<h1>技術者が使わなければならない理由</h1>
+<img alt="post-v6homegw-kitaguchi-2.jpg" src="post-v6homegw-kitaguchi-2.jpg" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id21">
+<h1>技術者が使わなければならない理由</h1>
+<img alt="post-v6homegw-kitaguchi-3.jpg" src="post-v6homegw-kitaguchi-3.jpg" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id22">
+<h1>技術者が使わなければならない理由</h1>
+<img alt="post-v6homegw-kitaguchi-10.jpg" src="post-v6homegw-kitaguchi-10.jpg" />
+</div>
+<hr class="docutils" />
+<div class="section" id="id23">
+<h1>ほとんど何も決まってない！！！</h1>
+<hr class="docutils" />
+<div class="section" id="world-ipv6-day">
+<h1>World IPv6 Day は特別な状況下で成功しただけ！！！</h1>
+<hr class="docutils" />
+<div class="section" id="contd">
+<h1>アドレス表記 (Contd.)</h1>
+<p>アドレス表記のおさらい</p>
+<ul class="simple">
+<li>IPv4 リンクローカルアドレス<ul>
+<li>169.254.0.0/16</li>
+</ul>
+</li>
+<li>IPv6 リンクローカルアドレス<ul>
+<li>fe80::/10<ul>
+<li>ex. fe80::C0FF:EE</li>
+<li>続きはRFC 1884で</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ところで、みなさん <a class="reference external" href="http://192.168.32.16/">http://192.168.32.16/</a> とかアクセスしますよね<ul>
+<li>IPv6ではどう書くんでしょうか？<ul>
+<li>基本はサイトローカルアドレスと同じです</li>
+<li>see also RFC 5156 <cite>2.3. IPv4-Compatible Addresses</cite></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id24">
+<h1>アドレス表記 (Contd.)</h1>
+<p>正解とポイント</p>
+<ul class="simple">
+<li><a class="reference external" href="http://[fe80::01%en0]:8080/">http://[fe80::01%en0]:8080/</a><ul>
+<li>コロン区切り表記に由来してポート番号がわからなくなるので [] が必要</li>
+<li>インターフェイスを指定しないと行き先がわかんない / 続きはRFC 1884で</li>
+</ul>
+</li>
+<li>ゾーンの扱いが難しい / ゾーンというのは上記では <cite>en0</cite> の部分<ul>
+<li><strong>ゾーンを指定しないと行き先が分からない</strong></li>
+<li><strong>コマンドによってゾーンの扱いはことなる</strong></li>
+</ul>
+</li>
+<li>ブラウザだとインターフェース指定がない</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>起動するたびに <strong>-i eth0</strong> とか指定するブラウザがあったらキモイ</li>
+<li><a class="reference external" href="http://[fe80::01%en0]:8080/">http://[fe80::01%en0]:8080/</a> のようなURL指定になる</li>
+<li><strong>そんな不思議なURLで大丈夫か？</strong></li>
+</ul>
+</blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="id25">
+<h1>実際にやってみた</h1>
+<p>ex. wget</p>
+<pre class="literal-block">
+takano32% wget -6 -O - 'http://[fe80::1%en0]:7890/'
+http://[fe80::1%en0]:7890/: IPv6 アドレスが不正です.
+</pre>
+<ul class="simple">
+<li>なんか認識してるけど、ゾーン（%en0）がパースできてないっぽい</li>
+</ul>
+<p>ex. w3m</p>
+<pre class="literal-block">
+takano32% w3m -6 -dump 'http://[fe80::1%en0]:7890/'
+w3m: Can't load http://[fe80::1%en0]:7890/.
+</pre>
+<ul class="simple">
+<li>パースはちょっとがんばった！でも、なんでかムリ！！！<ul>
+<li>ソース読んでないので理由はわかんない</li>
+</ul>
+</li>
+</ul>
+<p>とりあえず、'RFC 4007 11.2.  The &lt;zone_id&gt; Part' などは現状 <strong>ガン無視っぽい</strong></p>
+<p>ほかのHTTP User Agentの様子気になりますよね？</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="user-agent">
+<h1>User Agentのまとめ</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">User Agent</th>
+<th class="head">IPv6 linklocal address Ready?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>wget</td>
+<td>NG</td>
+</tr>
+<tr><td>w3m</td>
+<td>NG</td>
+</tr>
+<tr><td>Lynx</td>
+<td>OK!</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>意外だったのは w3m vs. Lynx<ul>
+<li>w3mのほうがユーザ数多い気がする</li>
+<li>メンテナも多い気がする</li>
+<li>それ以上に国産！<ul>
+<li>IPv6には日本からかなりのコミットがある</li>
+</ul>
+</li>
+<li>Lynxのほうは元から仕様に忠実な実装してたのかなぁ？</li>
+</ul>
+</li>
+</ul>
+<p>とりあえず、 <strong>よくわかんないことはわかった</strong></p>
+<p>はい、つぎの User Agent いきましょう</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="user-agent-2-0">
+<h1>User Agentのまとめ 2.0</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">User Agent</th>
+<th class="head">IPv6 linklocal address Ready?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Opera  11.50</td>
+<td>NG</td>
+</tr>
+<tr><td>Chrome dev</td>
+<td>NG</td>
+</tr>
+<tr><td>Chrome canary</td>
+<td>NG</td>
+</tr>
+<tr><td>Firefox 5.0.1</td>
+<td>OK!</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Firefoxがんばってる<ul>
+<li>探すと Host: ヘッダーに関する議論もフォーラムでしてる</li>
+</ul>
+</li>
+<li>Chr*meェ・・・<ul>
+<li>IPv6にしても困らないって声を大にして言ってるところのブラウザ</li>
+<li>なんだよ、ウソじゃん、困るやんけ・・・</li>
+</ul>
+</li>
+</ul>
+<p>もはや <strong>疑心暗鬼になるレベル</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id26">
+<h1>不正なアドレス 2.0</h1>
+<img alt="opera.png" src="opera.png" />
+<p>ネットワーク屋が得意なプロトコルスタックを改修してもムダ。</p>
+<p>ソフトウェア屋の対応が必要。 レイヤーが複雑なWebアプリケーションは悲惨。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ex-php-powered-by-zend-engine">
+<h1>ex. PHP powered by Zend Engine</h1>
+<p>我らがPHPでURIをパースしてみた</p>
+<pre class="literal-block">
+takano32% php -v
+PHP 5.3.6 (cli) (built: Jun  3 2011 16:17:53) (DEBUG)
+Copyright (c) 1997-2011 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2011 Zend Technologies
+</pre>
+<pre class="literal-block">
+takano32% php -r 'var_dump(parse_url(&quot;http://[fe80::1%en0]:7890/&quot;));'
+array(4) {
+  [&quot;scheme&quot;]=&gt;
+  string(4) &quot;http&quot;
+  [&quot;host&quot;]=&gt;
+  string(13) &quot;[fe80::1%en0]&quot;
+  [&quot;port&quot;]=&gt;
+  int(7890)
+  [&quot;path&quot;]=&gt;
+  string(1) &quot;/&quot;
+}
+</pre>
+<ul class="simple">
+<li>ソース読んでないけど、これは実装が適当すぎる例ですね<ul>
+<li>host は [] が取り除かれないと他の用途で使えません</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ex-sinatra-powered-by-ruby">
+<h1>ex. Sinatra powered by Ruby</h1>
+<p>Sinatra / sinatra / lib / sinatra / base.rb</p>
+<blockquote>
+<a class="reference external" href="https://github.com/sinatra/sinatra/blob/master/lib/sinatra/base.rb">https://github.com/sinatra/sinatra/blob/master/lib/sinatra/base.rb</a></blockquote>
+<pre class="literal-block">
+takano32% date
+Tue Jul 26 23:45:54 JST 2011
+</pre>
+<p>たぶん今も同じコード</p>
+<pre class="literal-block">
+set :run, false                       # start server via at-exit hook?
+set :running, false                   # is the built-in server running now?
+set :server, %w[thin mongrel webrick]
+set :bind, '0.0.0.0'
+set :port, 4567
+</pre>
+<p>えっ・・・ちょっとなんかすごいのがチラついた・・・</p>
+<pre class="literal-block">
+set :bind, '0.0.0.0'
+</pre>
+<p>IPv6というものは <strong>アウト・オブ・眼中</strong> という例</p>
+<ul class="simple">
+<li>IPv4の10進数表記をやめて、 set :bind, nil で対応できる</li>
+<li>っていうか、 <strong>放置してればIPv6でも使えるのに</strong> 余計なことしてる・・・</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="faq">
+<h1>FAQ</h1>
+<p>なんであなたはチケット切ったり修正しないんですか</p>
+<ul class="simple">
+<li>私はクラウドシステムのようにスケールしません...orz<ul>
+<li>可能な範囲では修正などを促したりしています</li>
+</ul>
+</li>
+<li>影響プロダクトが無数<ul>
+<li>FTPとかもNAPTで影響がありそう<ul>
+<li>おそらく ip_conntrack_ftp と ip_nat_ftp という箇所などで不整合</li>
+<li>FTPとかソフトウェア屋にとってはロストテクノロジー</li>
+<li>でも各所のWebデザインが「ギャー」するのかなー</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rubyまわりくらいは余裕があればなおします<ul>
+<li>Rubyは処理系周りのコミット権あるし、折衝しやすい</li>
+</ul>
+</li>
+</ul>
+<p>現実的に現段階で効果的なのは啓蒙活動くらい</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id27">
+<h1>まとめ</h1>
+<ul class="simple">
+<li><strong>どのレイヤーで問題が起こるかわからない</strong> ので、必要なときには専門外のソースコードにもダイブする勇気を</li>
+<li>同じ問題意識を共有し、世界のサービスが「ギャー」ってならないといいですね！<ul>
+<li>そして、余裕があれば啓蒙活動をしましょう</li>
+</ul>
+</li>
+<li>今回の例は氷山の一角でIPv6が広く使われはじめたら何が起こるか分かりません<ul>
+<li>ネットワーク屋が言う「動く」を真に受けすぎるとやられる可能性大</li>
+<li>さしあたり LSN or CGN でインターネットの「ギャー」ありそう<ul>
+<li>超大雑把に言うとバカでかいNAPT作りましたってヤツです</li>
+<li>Ajax使ってるサービスはNAPTのテーブル溢れさせる可能性高い</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ipv6">
+<h1>おまけ：あなたの IPv6 レベル</h1>
+<p>独断と偏見</p>
+<ol class="arabic simple">
+<li>&quot;IPv6&quot;という文字列</li>
+<li>IPv4 と IPv6 の存在</li>
+<li>IPv4 のIPアドレスが少ない</li>
+<li>IPv4 のグローバルアドレスが枯渇した</li>
+<li>IPv4 のアドレスは32ビットで IPv6 のアドレスは 128ビット</li>
+<li>IPv6 のアドレス表記</li>
+<li>AAAA レコードの存在</li>
+<li>アドレス空間の分け方</li>
+<li>IPv4ヘッダとIPv6ヘッダの違い</li>
+<li>アドレス空間が腐っても平気な回数</li>
+</ol>
+</div>
+</div>
+</body>
+</html>
